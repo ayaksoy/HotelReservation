@@ -22,7 +22,6 @@ namespace HotelReservation.Model
 
         public int Floor { get; set; }  // Odanın bulunduğu kat 
         public List<string>? Images { get; set; }  // Odanın resimleri
-        public bool IsAvailable { get; set; } = true;  // Oda müsait mi?
         public List<Reservation>? Reservations { get; set; }  // Oda rezervasyonları
     }
 }

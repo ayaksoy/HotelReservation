@@ -10,6 +10,6 @@ namespace HotelReservation.Model
         int Id { get; set; }
         string? Name { get; set; }
         List<Room>? Rooms { get; set; }
-        List<string>? Amenities { get; set; }
+        List<Amenity>? Amenities { get; set; }
     }
 }
