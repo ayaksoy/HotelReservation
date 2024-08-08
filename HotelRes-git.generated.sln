@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.002.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Backend", "Backend", "{5DA1E60A-673A-47D6-A6C4-1A77EDA98136}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HotelReservation", "Backend\HotelReservation\HotelReservation.csproj", "{6F2DC693-778C-4003-8DD3-7B6739B75E0A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6F2DC693-778C-4003-8DD3-7B6739B75E0A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F2DC693-778C-4003-8DD3-7B6739B75E0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F2DC693-778C-4003-8DD3-7B6739B75E0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F2DC693-778C-4003-8DD3-7B6739B75E0A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{6F2DC693-778C-4003-8DD3-7B6739B75E0A} = {5DA1E60A-673A-47D6-A6C4-1A77EDA98136}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {69A767C9-C608-4E29-BB5D-CFA08CBEDF91}
+	EndGlobalSection
+EndGlobal
