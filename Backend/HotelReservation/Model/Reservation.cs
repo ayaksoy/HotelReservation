@@ -16,7 +16,11 @@ namespace HotelReservation.Model
         [DataType(DataType.Date)]
         public DateTime CheckOutDate { get; set; }
         public int NumberOfGuests { get; set; }
-        public string? GuestName { get; set; }
+        public string? GuestFirstName { get; set; }
+        public string? GuestLastName { get; set; }
+        public string? GuestPhone { get; set; }
         public string? GuestEmail { get; set; }
+        public string? Request { get; set; }
+
     }
 }
