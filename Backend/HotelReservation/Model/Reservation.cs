@@ -15,7 +15,7 @@ namespace HotelReservation.Model
         public DateTime CheckInDate { get; set; }
         [DataType(DataType.Date)]
         public DateTime CheckOutDate { get; set; }
-        public int NumberOfGuests { get; set; }  // Rezervasyondaki toplam konuk sayısı
+        public int NumberOfGuests { get; set; }
         public string? GuestName { get; set; }
         public string? GuestEmail { get; set; }
     }
