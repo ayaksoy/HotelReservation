@@ -8,13 +8,18 @@ using HotelReservation.Model;
 using HotelReservation.Service;
 using Microsoft.AspNetCore.Mvc;
 
-namespace HotelReservation.Controller
+namespace HotelReservation.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class AmenityController(AmenityService service) : ControllerBase
+    public class AmenityController : ControllerBase
     {
-        private readonly AmenityService service = service;
+        private readonly AmenityService service;
+
+        public AmenityController(AmenityService service)
+        {
+            this.service = service;
+        }
 
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Amenity>>> GetAllAmenitiesAsync()
@@ -22,6 +27,7 @@ namespace HotelReservation.Controller
             var amenities = await service.GetAllAmenitiesAsync();
             return Ok(amenities);
         }
+
         [HttpGet("{id}")]
         public async Task<ActionResult<Amenity>> GetAmenityByIdAsync(int id)
         {
@@ -30,29 +36,33 @@ namespace HotelReservation.Controller
                 return NotFound();
             return Ok(amenity);
         }
+
         [HttpPost]
         public async Task<ActionResult<Amenity>> CreateAmenityAsync(AmenityDto amenityDto)
         {
             var amenity = await service.CreateAmenityAsync(amenityDto);
-            return CreatedAtAction(nameof(GetAmenityByIdAsync), new { id = amenity.Id }, amenity);
+            return Ok(amenity);
         }
+
+
         [HttpPut("{id}")]
-        public async Task<ActionResult<Amenity>> UpdateAmenityById(int id, AmenityDto amenity)
+        public async Task<ActionResult<Amenity>> UpdateAmenityByIdAsync(int id, AmenityDto amenityDto)
         {
-            var amenityToUpdate = await service.UpdateAmenityById(id, amenity);
+            var amenityToUpdate = await service.UpdateAmenityByIdAsync(id, amenityDto);
             if (amenityToUpdate == null)
                 return NotFound();
             return Ok(amenityToUpdate);
         }
+
         [HttpDelete("{id}")]
-        public async Task<ActionResult> DeleteById(int id)
+        public async Task<ActionResult> DeleteByIdAsync(int id)
         {
             var amenity = await service.GetAmenityByIdAsync(id);
             if (amenity == null)
                 return NotFound();
-            service.DeleteAmenityById(id);
-            return NoContent();
 
+            service.DeleteAmenityByIdAsync(id); // Eğer bu metot async ise await kullanın
+            return NoContent();
         }
     }
 }

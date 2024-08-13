@@ -2,17 +2,13 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
-using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
-namespace HotelReservation.Model
+namespace HotelReservation.Dto
 {
-    public class Reservation
+    public class ReservationDto
     {
-        public int Id { get; set; }
         public int RoomId { get; set; }
-        [JsonIgnore]
-        public Room? Room { get; set; }
         [DataType(DataType.Date)]
         public DateTime CheckInDate { get; set; }
         [DataType(DataType.Date)]
@@ -23,6 +19,5 @@ namespace HotelReservation.Model
         public string? GuestPhone { get; set; }
         public string? GuestEmail { get; set; }
         public string? Request { get; set; }
-
     }
 }

@@ -34,7 +34,7 @@ namespace HotelReservation.Service
             await db.SaveChangesAsync();
             return amenity;
         }
-        public async Task<Amenity> UpdateAmenityById(int id, AmenityDto amenity)
+        public async Task<Amenity> UpdateAmenityByIdAsync(int id, AmenityDto amenity)
         {
             var amenityToUpdate = await db.Amenities.FindAsync(id);
             if (amenityToUpdate == null)
@@ -47,9 +47,12 @@ namespace HotelReservation.Service
             return amenityToUpdate;
         }
 
-        internal void DeleteAmenityById(int id)
+        public void DeleteAmenityByIdAsync(int id)
         {
-            throw new NotImplementedException();
+            var amenity = db.Amenities.Find(id);
+            db.Amenities.Remove(amenity);
+            db.SaveChanges();
         }
+
     }
 }
